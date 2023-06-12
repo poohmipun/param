@@ -17,7 +17,7 @@
             await liff.init({ liffId: "1661306848-p5lolXm3" })
             if (!liff.isLoggedIn()) {
                 const destinationUrl = window.location.href;
-                liff.login()
+                liff.login({ redirectUri: destinationUrl })
             }
             const urlParams = new URLSearchParams(window.location.search)
             document.querySelector('#result').append(urlParams.get('param'));
