@@ -20,13 +20,12 @@
     <script src="https://static.line-scdn.net/liff/edge/versions/2.21.0/sdk.js"></script>
     <script>
         async function main() {
-            await liff.init({ liffId: "1661306848-p5lolXm3" })
+            await liff.init({ liffId: "1661306848-p5lolXm3" });
             if (!liff.isLoggedIn()) {
                 const destinationUrl = window.location.href;
-                liff.login({ redirectUri: destinationUrl })
+                liff.login({ redirectUri: destinationUrl });
             }
-            const urlParams = new URLSearchParams(window.location.search)
-
+            const urlParams = new URLSearchParams(window.location.search);
 
             if (urlParams.get('param') === "100") {
                 document.querySelector('#result').append("Congratulations");
@@ -34,6 +33,7 @@
                 document.querySelector('#result').append("Better luck next time");
             }
         }
+
         async function moveToChat() {
             window.location.href = 'https://lin.ee/a3xVDup';
         }
