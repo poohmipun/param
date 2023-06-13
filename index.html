@@ -12,7 +12,7 @@
     <div id="container">
         <div id="container">
             <h1 id="result">คุณได้ของ
-                <hr>....
+                <hr>
             </h1>
             <button onclick="moveToChat()">Move to Chat</button>
         </div>
@@ -28,9 +28,9 @@
             const urlParams = new URLSearchParams(window.location.search);
 
             if (urlParams.get('param') === "100") {
-                document.querySelector('#result').append("Congratulations");
+                document.querySelector('#result').append("แท้จ้า");
             } else {
-                document.querySelector('#result').append("Better luck next time");
+                document.querySelector('#result').append("ปลอมจ้า");
             }
         }
 
