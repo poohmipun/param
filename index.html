@@ -33,6 +33,7 @@
             }
             getUserProfile()
             const urlParams = new URLSearchParams(window.location.search);
+            console.log(urlParams.get('param'))
             if (urlParams.get('param') === "100") {
                 document.querySelector('#result').append("แท้จ้า");
             } else {
