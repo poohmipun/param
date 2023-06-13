@@ -26,11 +26,13 @@
                 liff.login({ redirectUri: destinationUrl })
             }
             const urlParams = new URLSearchParams(window.location.search)
-            document.querySelector('#result').append(urlParams.get('param'));
-            window.onbeforeunload = function () {
-                window.location.href = 'https://lin.ee/a3xVDup';
-            };
 
+
+            if (urlParams.get('param') === "100") {
+                document.querySelector('#result').append("Congratulations");
+            } else {
+                document.querySelector('#result').append("Better luck next time");
+            }
         }
         async function moveToChat() {
             window.location.href = 'https://lin.ee/a3xVDup';
