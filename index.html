@@ -18,7 +18,7 @@
                 <img id="pictureUrl">
                 <p id="displayName"><b>displayName:</b></p>
                 <p id="statusMessage"><b>statusMessage:</b></p>
-                <button id="btnLogOut" onclick="logOut( )">Log Out</button>
+                <button id="btnLogOut" onclick="logOut()">Log Out</button>
             </div>
             <button onclick="moveToChat()">กลับไปหน้าหลัก</button>
         </div>
@@ -48,7 +48,7 @@
             const profile = await liff.getProfile()
             document.getElementById("pictureUrl").src = profile.pictureUrl
             document.getElementById("displayName").append(profile.displayName)
-            document.getElementById("statusMessage ").append(profile.statusMessage)
+            document.getElementById("statusMessage").append(profile.statusMessage)
         }
         async function logOut() {
             liff.logOut()
