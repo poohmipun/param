@@ -21,6 +21,10 @@
             }
             const urlParams = new URLSearchParams(window.location.search)
             document.querySelector('#result').append(urlParams.get('param'));
+            moveToChat()
+        }
+        async function moveToChat() {
+            window.location.replace("https://lin.ee/a3xVDup");
         }
         main()
     </script>
