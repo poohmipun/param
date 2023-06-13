@@ -21,11 +21,13 @@
             }
             const urlParams = new URLSearchParams(window.location.search)
             document.querySelector('#result').append(urlParams.get('param'));
-            moveToChat()
+            liff.sendMessages(urlParams);
+            console.log(urlParams)
+
         }
-        async function moveToChat() {
-            window.location.replace("https://lin.ee/a3xVDup");
-        }
+        /* async function moveToChat() {
+          
+        } */
         main()
     </script>
 </body>
