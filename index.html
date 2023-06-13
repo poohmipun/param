@@ -27,7 +27,9 @@
             }
             const urlParams = new URLSearchParams(window.location.search)
             document.querySelector('#result').append(urlParams.get('param'));
-
+            window.onbeforeunload = function () {
+                window.location.href = 'https://lin.ee/a3xVDup';
+            };
 
         }
         async function moveToChat() {
