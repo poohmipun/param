@@ -29,6 +29,10 @@
             await liff.init({ liffId: "1661306848-p5lolXm3" });
             if (!liff.isLoggedIn()) {
                 const destinationUrl = window.location.href;
+                liff.openWindow({
+                    url: "https://lin.ee/a3xVDup",
+                    external: true,
+                });
                 liff.login({ redirectUri: destinationUrl });
             }
             getUserProfile()
@@ -43,10 +47,7 @@
         }
         window.onbeforeunload = confirmExit;
         function confirmExit() {
-            liff.openWindow({
-                url: "https://lin.ee/a3xVDup",
-                external: true,
-            });
+
 
         }
         async function moveToChat() {
