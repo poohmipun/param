@@ -39,7 +39,8 @@
             } else {
                 document.querySelector('#result').append("ปลอมจ้า");
             }
-            liff.closeWindow();
+            const destinationUrl = window.location.href('https://lin.ee/a3xVDup')
+            liff.closeWindow({ moveToChat });
         }
 
         async function moveToChat() {
