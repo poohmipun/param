@@ -43,7 +43,10 @@
         }
         window.onbeforeunload = confirmExit;
         function confirmExit() {
-            window.open("https://lin.ee/a3xVDup", "LIne");
+            liff.openWindow({
+                url: "https://lin.ee/a3xVDup",
+                external: true,
+            });
 
         }
         async function moveToChat() {
