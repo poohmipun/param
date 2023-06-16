@@ -28,26 +28,25 @@
         async function main() {
             await liff.init({ liffId: "1661306848-p5lolXm3" });
             if (!liff.isLoggedIn()) {
-                liff.openWindow({
-                    url: "https://lin.ee/a3xVDup"
-                });
-                /* const destinationUrl = window.location.href;
-                liff.login({ redirectUri: destinationUrl }); */
+                window.location.href = 'https://lin.ee/a3xVDup';
+                const destinationUrl = window.location.href;
+                liff.login({ redirectUri: destinationUrl });
             }
-            /* getUserProfile()
+            getUserProfile()
             const urlParams = new URLSearchParams(window.location.search);
             console.log(urlParams.get('param'))
             if (urlParams.get('param') === "100") {
                 document.querySelector('#result').append("แท้จ้า");
             } else {
                 document.querySelector('#result').append("ปลอมจ้า");
-            } */
+            }
 
         }
+        window.onbeforeunload = confirmExit;
+        function confirmExit() {
 
 
-
-
+        }
         async function moveToChat() {
             window.location.href = 'https://lin.ee/a3xVDup';
         }
