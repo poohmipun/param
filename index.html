@@ -28,7 +28,6 @@
         async function main() {
             await liff.init({ liffId: "1661306848-p5lolXm3" });
             if (!liff.isLoggedIn()) {
-                window.location.href = 'https://lin.ee/a3xVDup';
                 const destinationUrl = window.location.href;
                 liff.login({ redirectUri: destinationUrl });
             }
@@ -42,11 +41,7 @@
             }
 
         }
-        window.onbeforeunload = confirmExit;
-        function confirmExit() {
 
-
-        }
         async function moveToChat() {
             window.location.href = 'https://lin.ee/a3xVDup';
         }
