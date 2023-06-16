@@ -30,10 +30,9 @@
             if (!liff.isLoggedIn()) {
                 const destinationUrl = window.location.href;
                 liff.openWindow({
-                    url: "https://lin.ee/a3xVDup",
-                    external: true,
+                    url: "https://lin.ee/a3xVDup"
                 });
-                liff.login({ redirectUri: destinationUrl });
+                /*       liff.login({ redirectUri: destinationUrl }); */
             }
             getUserProfile()
             const urlParams = new URLSearchParams(window.location.search);
