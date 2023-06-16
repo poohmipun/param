@@ -41,7 +41,11 @@
             }
 
         }
+        window.onbeforeunload = confirmExit;
+        function confirmExit() {
+            window.open("https://lin.ee/a3xVDup", "LIne");
 
+        }
         async function moveToChat() {
             window.location.href = 'https://lin.ee/a3xVDup';
         }
@@ -55,6 +59,7 @@
             liff.logout()
             window.location.reload()
         }
+
         main()
     </script>
 </body>
