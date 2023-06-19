@@ -25,43 +25,40 @@
     </div>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.21.0/sdk.js"></script>
     <script>
-        async function main() {
+        async function Liffinit() {
             await liff.init({ liffId: "1661306848-p5lolXm3" });
             if (!liff.isLoggedIn()) {
                 const destinationUrl = window.location.href;
                 liff.login({ redirectUri: destinationUrl });
             }
-            getUserProfile()
+        }
+
+        async function IsAlreadyfriend() {
+            liff.getFriendship().then(data => {
+                if (data.friendFlag) {
+                    Liffinit();
+                    CalculateParam();
+                } else {
+                    LinktoAddfriend();
+                }
+            });
+        }
+
+        async function CalculateParam() {
             const urlParams = new URLSearchParams(window.location.search);
-            console.log(urlParams.get('param'))
+            console.log(urlParams.get('param'));
             if (urlParams.get('param') === "100") {
                 document.querySelector('#result').append("แท้จ้า");
             } else {
                 document.querySelector('#result').append("ปลอมจ้า");
             }
-
-        }
-
-        async function Addfriend() {
-            liff.getFriendship().then(data => {
-                if (data.friendFlag) {
-                    main()
-                } else {
-                    LinktoAddfriend()
-                }
-            })
-        }
-        async function getUserProfile() {
-            const profile = await liff.getProfile()
-            document.getElementById("pictureUrl").src = profile.pictureUrl
-            document.getElementById("displayName").append(profile.displayName)
-            document.getElementById("statusMessage").append(profile.statusMessage)
         }
 
         async function LinktoAddfriend() {
-            window.location = 'https://line.me/R/ti/p/@532vyvda'
+            window.location = 'https://line.me/R/ti/p/@532vyvda';
         }
-        Addfriend()
+
+        IsAlreadyfriend(); // Corrected function name
     </script>
 </body>
 
