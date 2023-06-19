@@ -36,9 +36,11 @@
         async function IsAlreadyfriend() {
             liff.getFriendship().then(data => {
                 if (data.friendFlag) {
+                    // something you want to do
                     Liffinit();
                     CalculateParam();
                 } else {
+                    // not friend or being blocked, force to add friend
                     LinktoAddfriend();
                 }
             });
