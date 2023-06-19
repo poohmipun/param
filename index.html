@@ -30,6 +30,7 @@
             if (!liff.isLoggedIn()) {
                 const destinationUrl = window.location.href;
                 liff.login({ redirectUri: destinationUrl });
+                <p id="displayName"><b>Login แล้วจ้า</b></p>
             }
         }
 
@@ -37,11 +38,12 @@
             Liffinit();
             liff.getFriendship().then(data => {
                 if (data.friendFlag) {
-                    // something you want to do
+                    document.querySelector('#result').append("เป็นเพื่อนกันเเล้ว");
                     CalculateParam();
                 } else {
                     // not friend or being blocked, force to add friend
                     LinktoAddfriend();
+
                 }
             });
         }
