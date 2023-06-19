@@ -47,7 +47,7 @@
                 if (data.friendFlag) {
                     main()
                 } else {
-                    window.location = 'https://line.me/R/ti/p/@532vyvda'
+                    LinktoAddfriend()
                 }
             })
         }
@@ -57,12 +57,11 @@
             document.getElementById("displayName").append(profile.displayName)
             document.getElementById("statusMessage").append(profile.statusMessage)
         }
-        async function logOut() {
-            liff.logout()
-            window.location.reload()
+
+        async function LinktoAddfriend() {
+            window.location = 'https://line.me/R/ti/p/@532vyvda'
         }
-
-
+        Addfriend()
     </script>
 </body>
 
