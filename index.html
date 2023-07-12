@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="container">
-        <h1 id="result">คุณได้ของ
-            <hr>
-        </h1>
-        <div>
-            <p id="displayName"><b>displayName:</b></p>
-            <p id="statusMessage"><b>statusMessage:</b></p>
-        </div>
+      <h1 id="result">
+        คุณได้ของ
+        <hr />
+      </h1>
+      <div>
+        <p id="displayName"><b>displayName:</b></p>
+        <p id="statusMessage"><b>statusMessage:</b></p>
+      </div>
     </div>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.21.0/sdk.js"></script>
     <script>
-        async function Liffinit() {
-            await liff.init({ liffId: "1661306848-p5lolXm3" });
-            if (!liff.isLoggedIn()) {
-                liff.login();
-            } else {
-                IsAlreadyFriend();
-            }
+      async function Liffinit() {
+        await liff.init({
+          liffId: "1661306848-p5lolXm3",
+          withLoginOnExternalBrower: true,
+        });
+        if (!liff.isLoggedIn()) {
+          liff.login();
+        } else {
+          IsAlreadyFriend();
         }
+      }
 
-        async function IsAlreadyFriend() {
-            liff.getFriendship().then(data => {
-                if (data.friendFlag) {
-                    CalculateParam();
-                } else {
-                    LinkToAddFriend();
-                }
-            });
+      async function IsAlreadyFriend() {
+        liff.getFriendship().then((data) => {
+          if (data.friendFlag) {
+            CalculateParam();
+          } else {
+            LinkToAddFriend();
+          }
+        });
+      }
+
+      async function CalculateParam() {
+        const urlParams = new URLSearchParams(window.location.search);
+        console.log(urlParams.get("param"));
+        if (urlParams.get("param") === "100") {
+          document.querySelector("#result").append("แท้จ้า");
+        } else {
+          document.querySelector("#result").append("ปลอมจ้า");
         }
+      }
 
-        async function CalculateParam() {
-            const urlParams = new URLSearchParams(window.location.search);
-            console.log(urlParams.get('param'));
-            if (urlParams.get('param') === "100") {
-                document.querySelector('#result').append("แท้จ้า");
-            } else {
-                document.querySelector('#result').append("ปลอมจ้า");
-            }
-        }
+      async function LinkToAddFriend() {
+        window.location = "https://line.me/R/ti/p/@532vyvda";
+      }
 
-        async function LinkToAddFriend() {
-            window.location = 'https://line.me/R/ti/p/@532vyvda';
-        }
-
-        Liffinit();
+      Liffinit();
     </script>
-</body>
-
+  </body>
 </html>
