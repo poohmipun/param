@@ -21,10 +21,7 @@
     <script src="https://static.line-scdn.net/liff/edge/versions/2.21.0/sdk.js"></script>
     <script>
       async function Liffinit() {
-        await liff.init({
-          liffId: "1661306848-p5lolXm3",
-          withLoginOnExternalBrower: true,
-        });
+        await liff.init({ liffId: "1661306848-p5lolXm3" });
         if (!liff.isLoggedIn()) {
           liff.login();
         } else {
